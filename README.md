@@ -1,4 +1,4 @@
-# # GoogleMapsSightsManager
+# GoogleMapsSightsManager
 
 
 GoogleMapsSightsManager is a tool that automize the transfer of starred places from a Google Account to another.
