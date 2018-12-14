@@ -6,12 +6,13 @@ GoogleMapsSightsManager is a tool that automize the transfer of starred places f
 
 ### Installation
 
-'''git clone https://github.com/G4ryDave/GoogleMapsSightsManager.git
+```sh
+git clone https://github.com/G4ryDave/GoogleMapsSightsManager.git
 cd GoogleMapsSightsManager/
 pip install -r requirements.txt
 python firefox_main.py
+```
 
-'''
 
 
 ## To Do!
