@@ -1,5 +1,6 @@
 import sys
 import time
+import os
 import savePlace
 
 from selenium import webdriver
@@ -28,7 +29,9 @@ def main():
     main_time = time.time()
     options = FirefoxOptions()
     options.add_argument("--headless")
-    driver = webdriver.Firefox(firefox_options=options)
+    webdriver_path = os.path.dirname(os.path.abspath(__file__))
+
+    driver = webdriver.Firefox(firefox_options=options,executable_path=webdriver_path + r"/assets/geckodriver")
     # options.add_argument("--headless")
     print("Firefox Headless Browser Invoked")
 
