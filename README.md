@@ -4,7 +4,7 @@
 
 
 GoogleMapsSightsManager is a tool that automize the transfer of starred places from a Google Account to another. In the same way it is possible to delete all your starred places from your Google account.
-Currently test on MacOS and Ubuntu 16.04.
+Currently tested on MacOS and Ubuntu 16.04.
 
 
 ### Installation
@@ -33,7 +33,7 @@ Choose one of the browser below:
  
  
 ## Why I have to put ID & Psw??
-No one would have to share this sensible information but they required to login the browser.Infact, while in test mode, every account is logged out by default. Due to this constrain we need the Google Account ID & Password.** As you can see from the source code this credentials are not stored!** .
+No one should have to share this sensible informations but they are required to login the browser.Infact, while in test mode, every account is logged out by default. Due to this constraint we need the Google Account ID & Password.**As you can see from the source code this credentials are not stored!** .
 
 ### To Do
 
