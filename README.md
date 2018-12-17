@@ -4,7 +4,7 @@
 
 
 GoogleMapsSightsManager is a tool that automize the transfer of starred places from a Google Account to another. In the same way it is possible to delete all your starred places from your Google account.
-Currently tested on MacOS and Ubuntu 16.04.
+Currently test on MacOS and Ubuntu 16.04.
 
 
 ### Installation
@@ -19,7 +19,7 @@ or
 ```
 
 ### Procedure
-Choose one of the browser below:
+Choose one of the browsers below:
 ##### - Firefox (Recommended)  [Background supported]
   Download ```geckodriver``` for your system [from here](https://github.com/mozilla/geckodriver/releases). Extract the .tar.gz file and put it in ```/assets``` folder
 ##### - Chrome (Doesn't work in background)
@@ -27,13 +27,13 @@ Choose one of the browser below:
  
 1. Go to ```https://www.google.com/bookmarks``` and login with the Google account that contains the starred places to transfer.
 2. On the left side of the page press ```Export Bookmarks```. (Should download "GoogleBookmarks.html" in your download folder).
-3. Start the programm and type ID & Password of your Google account, that should import the starred places, on request.
+3. Start the programm (step 4a or 4b) and, on request, type ID & Password of your Google account, that should import the starred places.
 4. Select ```GoogleBookmarks.html``` in the next window.
 
  
  
-## Why I have to put ID & Psw??
-No one should have to share this sensible informations but they are required to login the browser.Infact, while in test mode, every account is logged out by default. Due to this constraint we need the Google Account ID & Password.**As you can see from the source code this credentials are not stored!** .
+## Why do I have to put ID & Psw??
+No one would have to share this sensible information but they required to login the browser. Infact, while in test mode, every account is logged out by default. Due to this constrain we need the Google Account ID & Password. ** As you can see from the source code this credentials are not stored!** .
 
 ### To Do
 
