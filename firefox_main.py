@@ -10,19 +10,18 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
 def main():
-    counter = 0
-    time_average = []
-    exception_found = []
-
-    print("Type the Id e psw the Google account to whome transfer the favorites")
+    print("Google Account where you want to import the starred places:")
     string_username = input("ID: ")
     string_password = input("Password: ")
+    counter = 0
+    time_total = 0
+    time_login = 0
+    exception_found = []
+
     filepath = savePlace.select_google_bookmarks()
     sights_list = savePlace.parse_place_url(filepath)
     number_of_sights = len(sights_list)
-
-    print("NUMBER OF ATTRACTIONS FOUND: {}".format(number_of_sights))
-    print("ETA: {} seconds".format(number_of_sights * 4.5 + 17))  # 17 seconds is the average time to login the first time
+    print("NUMBER OF SIGHTS FOUND: {}".format(number_of_sights))
     print(
         "Time estimated based on average time without considering exceptions, every exceptions require at least 20 seconds.")
     time.sleep(0.2)
@@ -32,7 +31,6 @@ def main():
     webdriver_path = os.path.dirname(os.path.abspath(__file__))
 
     driver = webdriver.Firefox(firefox_options=options,executable_path=webdriver_path + r"/assets/geckodriver")
-    # options.add_argument("--headless")
     print("Firefox Headless Browser Invoked")
 
     for sight in sights_list:
@@ -41,6 +39,7 @@ def main():
         if sight == sights_list[0]:
             try:
                 savePlace.login(driver, string_username, string_password)
+                start_time = time.time()
                 time.sleep(5)
                 savePlace.favorite_sight(driver)
             except:
@@ -55,18 +54,17 @@ def main():
                 exception_found.append(sight)
         counter = counter + 1
         time_passed = time.time() - start_time
-        time_average.append(time_passed)
-        # print ("{} seconds ---".format(time_passed))
-        # print ("{}/{}".format(counter,number_of_sights))
-        savePlace.progbar(counter, number_of_sights, 30)
+        time_total = time_total + time_passed
+        time_eta = round(time_total / counter * (number_of_sights - counter), 2)
+        #print("ETA {}: {} seconds pass , average {}".format(counter, round(time_passed, 3),round(time_total / counter), 3))
+        savePlace.progbar(counter, number_of_sights, 30, time_eta)
         sys.stdout.flush()
 
-    total_time = time.time() - main_time
-    print("\nTOTAL TIME: {} seconds".format(round(total_time, 2)))
+    time_since_start = time.time() - main_time
+    print("\nTOTAL TIME: {} seconds".format(round(time_since_start, 2)))
     print("Total Exception found: {} ".format(len(exception_found)))
     for exception in exception_found:
         print(exception)
-
     driver.quit()
 
 if __name__ == "__main__":

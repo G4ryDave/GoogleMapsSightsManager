@@ -34,10 +34,10 @@ def parse_place_url(bookmarks_path):
     return list_sights
 
 
-def progbar(current_value, total, len_progress_bar):
+def progbar(current_value, total, len_progress_bar, eta):
     fraction = current_value / total
     filled_progbar = round(fraction * len_progress_bar)
-    print('\r', '#' * filled_progbar + '-' * (len_progress_bar - filled_progbar), '[{:>7.2%}]'.format(fraction))
+    print('\r', '#' * filled_progbar + '-' * (len_progress_bar - filled_progbar), '[{:.2%} ETA: {}s]'.format(fraction, eta))
     print("")
 
 
@@ -71,7 +71,7 @@ def login(driver, string_username, string_password):
         EC.element_to_be_clickable((By.XPATH,
                                     "/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content/span")))  # trigger that enable the star button
     password.send_keys(string_password)
-    time.sleep(5.5)
+    time.sleep(2.5)
     signin_button = driver.find_element_by_xpath(
         '/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content/span')
     signin_button.click()
