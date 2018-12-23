@@ -1,9 +1,12 @@
+import os
 import sys
 import time
-import savePlace
-import os
+
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
+
+import savePlace
+
 
 def main():
     print("Google Account where you want to import the starred places:")
@@ -15,6 +18,7 @@ def main():
     exception_found = []
 
     filepath = savePlace.select_google_bookmarks()
+    print(filepath)
     sights_list = savePlace.parse_place_url(filepath)
     number_of_sights = len(sights_list)
     print("NUMBER OF SIGHTS FOUND: {}".format(number_of_sights))
@@ -31,11 +35,18 @@ def main():
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--proxy-server='direct://'")
     chrome_options.add_argument("--proxy-bypass-list=*")
-    #chrome_options.add_argument("--start-maximized")
+    # chrome_options.add_argument("--start-maximized")
     # chrome_options.add_argument("--headless");
     webdriver_path = os.path.dirname(os.path.abspath(__file__))
-    driver = webdriver.Chrome(chrome_options=chrome_options, desired_capabilities=capabilities,executable_path=webdriver_path + r"/assets/chromedriver")
-    print("Chrome cannot be minimize but doesn't require to be the active window. Use Firefox for background.")
+    try:
+        driver = webdriver.Chrome(chrome_options=chrome_options, desired_capabilities=capabilities,
+                                  executable_path=webdriver_path + r"/assets/chromedriver")
+        print("Chrome cannot be minimize but doesn't require to be the active window. Use Firefox for background.")
+    except:
+        print(
+            "Download WebDriver, follow the instructions on github: https://github.com/G4ryDave/GoogleMapsSightsManager")
+        exit('File Not Found: Webdriver not found in "assets" folder')
+
     for sight in sights_list:
         start_time = time.time()
         savePlace.visit_sight_url(driver, sight)
@@ -58,9 +69,9 @@ def main():
         counter = counter + 1
         time_passed = time.time() - start_time
         time_total = time_total + time_passed
-        time_eta = round(time_total / counter *(number_of_sights - counter),2)
-        #print("ETA {}: {} seconds pass , average {}".format(counter,round(time_passed,3),round(time_total/counter),3))
-        savePlace.progbar(counter, number_of_sights, 30,time_eta)
+        time_eta = round(time_total / counter * (number_of_sights - counter), 2)
+        # print("ETA {}: {} seconds pass , average {}".format(counter,round(time_passed,3),round(time_total/counter),3))
+        savePlace.progbar(counter, number_of_sights, 30, time_eta)
         sys.stdout.flush()
 
     time_since_start = time.time() - main_time
@@ -69,5 +80,13 @@ def main():
     for exception in exception_found:
         print(exception)
 
+
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print('\nCATCH INTERRUPTION from the user. Program Ended')
+        try:
+            sys.exit(0)
+        except SystemExit:
+            os._exit(0)

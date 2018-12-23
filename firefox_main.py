@@ -1,12 +1,11 @@
+import os
 import sys
 import time
-import os
-import savePlace
 
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
-
+import savePlace
 
 
 def main():
@@ -29,9 +28,13 @@ def main():
     options = FirefoxOptions()
     options.add_argument("--headless")
     webdriver_path = os.path.dirname(os.path.abspath(__file__))
-
-    driver = webdriver.Firefox(firefox_options=options,executable_path=webdriver_path + r"/assets/geckodriver")
-    print("Firefox Headless Browser Invoked")
+    try:
+        driver = webdriver.Firefox(firefox_options=options, executable_path=webdriver_path + r"/assets/geckodriver")
+        print("Firefox Headless Browser Invoked")
+    except:
+        print(
+            "Download geckodriver, follow the instructions on github: https://github.com/G4ryDave/GoogleMapsSightsManager")
+        exit('File Not Found: geckodriver not found in "assets" folder')
 
     for sight in sights_list:
         start_time = time.time()
@@ -56,7 +59,7 @@ def main():
         time_passed = time.time() - start_time
         time_total = time_total + time_passed
         time_eta = round(time_total / counter * (number_of_sights - counter), 2)
-        #print("ETA {}: {} seconds pass , average {}".format(counter, round(time_passed, 3),round(time_total / counter), 3))
+        # print("ETA {}: {} seconds pass , average {}".format(counter, round(time_passed, 3),round(time_total / counter), 3))
         savePlace.progbar(counter, number_of_sights, 30, time_eta)
         sys.stdout.flush()
 
@@ -67,5 +70,13 @@ def main():
         print(exception)
     driver.quit()
 
+
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print('\nCATCH INTERRUPTION from the user. Program Ended')
+        try:
+            sys.exit(0)
+        except SystemExit:
+            os._exit(0)
