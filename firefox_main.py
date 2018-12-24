@@ -38,9 +38,11 @@ def main():
 
     for sight in sights_list:
         start_time = time.time()
+        # noinspection PyUnboundLocalVariable
         savePlace.visit_sight_url(driver, sight)
         if sight == sights_list[0]:
             try:
+                print("If you are using 2 factor authentication, you CAN'T use the background feature!")
                 savePlace.login(driver, string_username, string_password)
                 start_time = time.time()
                 time.sleep(5)

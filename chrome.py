@@ -35,6 +35,7 @@ def main():
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--proxy-server='direct://'")
     chrome_options.add_argument("--proxy-bypass-list=*")
+    chrome_options.add_argument("--disable-infobars")
     # chrome_options.add_argument("--start-maximized")
     # chrome_options.add_argument("--headless");
     webdriver_path = os.path.dirname(os.path.abspath(__file__))
@@ -49,6 +50,7 @@ def main():
 
     for sight in sights_list:
         start_time = time.time()
+        # noinspection PyUnboundLocalVariable
         savePlace.visit_sight_url(driver, sight)
         if sight == sights_list[0]:
             try:

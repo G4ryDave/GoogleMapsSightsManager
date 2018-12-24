@@ -23,7 +23,7 @@ def select_google_bookmarks():
 
 
 def parse_place_url(bookmarks_path):
-    f = open(bookmarks_path)  # simplified for the example (no urllib)
+    f = open(bookmarks_path)
     soup = BeautifulSoup(f, "lxml")
     f.close()
     list_sights = []
@@ -45,7 +45,8 @@ def progbar(current_value, total, len_progress_bar, eta):
 
 
 def login(driver, string_username, string_password):
-    satellite_button = WebDriverWait(driver, 20).until(
+
+    WebDriverWait(driver, 20).until(
         EC.element_to_be_clickable((By.XPATH,
                                     "/html/body/jsl/div[3]/div[7]/div[26]/div[3]/div/div[2]/button")))
     button = driver.find_element_by_class_name('section-action-popup-container')
@@ -56,6 +57,7 @@ def login(driver, string_username, string_password):
     button_sign_in.click()
     driver.implicitly_wait(2)
     # open Google login page
+
     print("LOGIN..")
     WebDriverWait(driver, 20).until(
         EC.element_to_be_clickable((By.XPATH,
@@ -66,19 +68,26 @@ def login(driver, string_username, string_password):
     next_button.click()
     WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH,
                                                                     "/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[1]/div/form/content/section/div/content/div[1]/div/div[1]/div/div[1]/input")))
-    time.sleep(1.5)
+    time.sleep(0.5)
     WebDriverWait(driver, 15).until(EC.presence_of_element_located(
         (By.XPATH, "/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content/span")))
     password = WebDriverWait(driver, 15).until(
         EC.presence_of_element_located((By.NAME, "password")))
     WebDriverWait(driver, 20).until(
         EC.element_to_be_clickable((By.XPATH,
-                                    "/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content/span")))  # trigger that enable the star button
+                                    "/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content/span")))
     password.send_keys(string_password)
-    time.sleep(2.5)
+    time.sleep(0.5)
+
     signin_button = driver.find_element_by_xpath(
         '/html/body/div[1]/div[1]/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/content/span')
     signin_button.click()
+
+    while driver.current_url[:27]=="https://accounts.google.com":
+        print("Checking 2 factor authentication, grant access..")
+        time.sleep(1)
+
+
 
 
 def visit_sight_url(driver, url):
