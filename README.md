@@ -20,7 +20,7 @@ or
 
 ### Procedure
 Choose one of the browsers below:
-##### - Firefox (Recommended)  [Background supported]
+##### - Firefox (Recommended)  [Background supported, doesn't support 2 factor authentication]
   Download ```geckodriver``` for your system [from here](https://github.com/mozilla/geckodriver/releases). Extract the .tar.gz file and put it in ```/assets``` folder
 ##### - Chrome (Doesn't work in background)
  Download ```chromedriver``` for your system [from here](https://sites.google.com/a/chromium.org/chromedriver/downloads). Extract the .zip file and put it in ```/assets``` folder
@@ -35,12 +35,16 @@ Choose one of the browsers below:
 ## Why do I have to put ID & Psw??
 No one would have to share this sensible information but they required to login the browser. Infact, while in test mode, every account is logged out by default. Due to this constrain we need the Google Account ID & Password. ** As you can see from the source code this credentials are not stored!** .
 
+
 ### To Do
 
-  - Dynamic ETA
-  - Handle Two-factor authentication
+  - ~~Dynamic ETA~~
+  - ~~Handle Two-factor authentication~~
   - Change requirements.txt
   - Create GUI
+  - Replace the remaining implicit wait with explicit wait
+  - Enhance Console Log
+
 
 License
 ----
