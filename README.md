@@ -12,8 +12,9 @@ Currently test on MacOS and Ubuntu 16.04.
 ```bash
 1. git clone https://github.com/G4ryDave/GoogleMapsSightsManager.git
 2. cd GoogleMapsSightsManager/
-3. pip install -r requirements.txt
-4a. python firefox_main.py
+3. sudo easy_install pip
+3. sudo pip install -r requirements.txt
+4a. python firefox.py
 or
 4b. python chrome.py
 ```
