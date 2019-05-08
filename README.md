@@ -3,8 +3,8 @@
 ![macOS](https://img.shields.io/badge/macOS-pass-brightgreen.svg) ![macOS](https://img.shields.io/badge/Ubuntu-pass-brightgreen.svg) ![tested](https://img.shields.io/badge/tested-08--05--19-brightgreen.svg)
 
 
-GoogleMapsSightsManager is a tool that automize the transfer of starred places from a Google Account to another. In the same way it is possible to delete all your starred places from your Google account.
-Currently test on MacOS and Ubuntu 16.04.
+GoogleMapsSightsManager is a tool that automizes the transfer of starred places from a Google Account to another. In the same way it is possible to delete all your starred places from your Google account.
+Currently tested on MacOS and Ubuntu 16.04.
 
 ![GMSM](gif/GoogleMapsSightsManager.gif)
 
@@ -36,7 +36,7 @@ Choose one of the browsers below:
  
  
 ## Why do I have to put ID & Psw??
-No one would have to share this sensible information but they required to login the browser. Infact, while in test mode, every account is logged out by default. Due to this constrain we need the Google Account ID & Password. ** As you can see from the source code this credentials are not stored!** .
+No one should have to share this sensible information but it is required to login in google Maps. In fact, while in test mode, every account is logged out by default. Due to this constrain we need the Google Account ID & Password. ** As you can see from the source code these credentials are not stored!** .
 
 
 ### To Do

@@ -47,12 +47,17 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="150">
-                <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <first_editor relative-caret-position="611">
+                <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gif/GoogleMapsSightsManager.gif">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -83,8 +88,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="967" />
+    <option name="width" value="840" />
+    <option name="height" value="966" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -98,6 +103,11 @@
             <path>
               <item name="GoogleMapsSightsManager" type="b2602c69:ProjectViewProjectNode" />
               <item name="GoogleMapsSightsManager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GoogleMapsSightsManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GoogleMapsSightsManager" type="462c0819:PsiDirectoryNode" />
+              <item name="gif" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -204,11 +214,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557272097362</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update ReadMe&#10;add Gif">
+      <created>1557317649382</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557317649382</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="840" height="965" extended-state="0" />
+    <frame x="0" y="23" width="840" height="966" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24908425" />
@@ -221,7 +238,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4981685" weight="0.3298969" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4981685" weight="0.32914287" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3298969" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50183153" side_tool="true" weight="0.3298969" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3298969" />
@@ -235,7 +252,8 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Initial introduction of &quot;Favorites&quot; and &quot;Want to go&quot;.&#10;Handle already starred place, no more overwriting.&#10;Better handling of 2 factor authentication.&#10;More robust trigger for actions.&#10;Increased speed&#10;6 languages supported (Italian, English, German, Netherlands, Spanish, French).&#10;Fix Login.&#10;Code optimization and cleaning.&#10;Better exceptions handling." />
     <MESSAGE value="Update ReadMe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update ReadMe" />
+    <MESSAGE value="Update ReadMe&#10;add Gif" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update ReadMe&#10;add Gif" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -265,11 +283,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gif/GoogleMapsSightsManager.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="150">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <first_editor relative-caret-position="611">
+            <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>
