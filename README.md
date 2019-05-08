@@ -36,17 +36,12 @@ Choose one of the browsers below:
  
  
 ## Why do I have to put ID & Psw??
-No one should have to share this sensible information but it is required to login in google Maps. In fact, while in test mode, every account is logged out by default. Due to this constrain we need the Google Account ID & Password. ** As you can see from the source code these credentials are not stored!** .
+No one should have to share this sensible information but it is required to login in google Maps. In fact, while in test mode, every account is logged out by default. Due to this constrain we need the Google Account ID & Password. **As you can see from the source code these credentials are not stored!** .
 
 
-### To Do
+### Performance
 
-  - ~~Dynamic ETA~~
-  - ~~Handle Two-factor authentication~~
-  - Change requirements.txt
-  - Create GUI
-  - Replace the remaining implicit wait with explicit wait
-  - Enhance Console Log
+Performace depends mainly on your internet connection, on averege should take 4 seconds per sight. Example: in my test 121 sights was correctly starred in 517 seconds.
 
 
 License
