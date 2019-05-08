@@ -1,10 +1,12 @@
 # GoogleMapsSightsManager
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) [![built with Selenium](https://img.shields.io/badge/built%20with-Selenium-yellow.svg)](https://github.com/SeleniumHQ/selenium) [![built with Python3](https://img.shields.io/badge/built%20with-Python3-red.svg)](https://www.python.org/)  
-![macOS](https://img.shields.io/badge/macOS-pass-brightgreen.svg) ![macOS](https://img.shields.io/badge/Ubuntu-pass-brightgreen.svg)
+![macOS](https://img.shields.io/badge/macOS-pass-brightgreen.svg) ![macOS](https://img.shields.io/badge/Ubuntu-pass-brightgreen.svg) ![tested](https://img.shields.io/badge/tested-08--05--19-brightgreen.svg)
 
 
 GoogleMapsSightsManager is a tool that automize the transfer of starred places from a Google Account to another. In the same way it is possible to delete all your starred places from your Google account.
 Currently test on MacOS and Ubuntu 16.04.
+
+![GMSM](gif/GoogleMapsSightsManager.gif)
 
 
 ### Installation
